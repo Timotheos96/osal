@@ -46,6 +46,7 @@
 #include "osapi-bsp.h"
 #include "osapi-error.h"
 #include "osapi-idmap.h"
+#include <xil_printf.h>
 
 /*
  * A set of simplified console control options
@@ -76,12 +77,21 @@
  * and are also generally not accessible from BSP code)
  */
 #if defined(OSAL_CONFIG_DEBUG_PRINTF)
+#if defined(_XILINX_)
+#define BSP_DEBUG(...)             \
+    do                             \
+    {                              \
+        xil_printf("%s():", __func__); \
+        xil_printf(__VA_ARGS__);       \
+    } while (0)
+#else
 #define BSP_DEBUG(...)             \
     do                             \
     {                              \
         printf("%s():", __func__); \
         printf(__VA_ARGS__);       \
     } while (0)
+#endif
 #else
 /* Debug printfs are not compiled in at all */
 #define BSP_DEBUG(...)
