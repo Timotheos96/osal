@@ -428,7 +428,9 @@ if (ENABLE_UNIT_TESTS)
     # It re-compiles each source unit for coverage analysis and links
     # with stub dependencies and a test sequence designed to execute
     # every line of source code within OSAL.
-    add_subdirectory(src/unit-test-coverage unit-test-coverage)
+    if(!OSAL_NO_COVERAGE_TESTS)
+        add_subdirectory(src/unit-test-coverage unit-test-coverage)
+    endif(!OSAL_NO_COVERAGE_TESTS)
 
     # The "tests" and "unit-tests" subdirectories implement examples and verification tests
     # of the OSAL library.  Note that these are both black box tests that link with the full
