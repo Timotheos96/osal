@@ -186,7 +186,7 @@ void UT_os_bin_sem_give_test()
     UT_RETVAL(OS_BinSemGive(OS_OBJECT_ID_UNDEFINED), OS_ERR_INVALID_ID);
 
     /*-----------------------------------------------------*/
-    if (UT_SETUP(OS_BinSemCreate(&bin_sem_id, "GiveTest", 1, 0)))
+    if (UT_SETUP(OS_BinSemCreate(&bin_sem_id, "GiveTest", 0, 0)))
     {
         UT_NOMINAL(OS_BinSemGive(bin_sem_id));
         UT_TEARDOWN(OS_BinSemDelete(bin_sem_id));
