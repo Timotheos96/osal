@@ -46,7 +46,10 @@
 #include "osapi-bsp.h"
 #include "osapi-error.h"
 #include "osapi-idmap.h"
+
+#if defined(_XILINX_)
 #include <xil_printf.h>
+#endif
 
 /*
  * A set of simplified console control options
