@@ -3,6 +3,8 @@
 
 # Core Flight System : Framework : Operating System Abstraction Layer
 
+>**NOTE**: This is a fork of NASA's Operating System Abstraction Layer (OSAL) repository, which is Licensed under the Apache License 2.0. A full copy of the license can be found in the LICENSE file
+
 This repository contains NASA's Operating System Abstraction Layer (OSAL), which is a framework component of the Core Flight System.
 
 This is a collection of abstraction APIs and associated framework to be located in the `osal` subdirectory of a cFS Mission Tree. The Core Flight System is bundled at <https://github.com/nasa/cFS>, which includes build and execution instructions.
